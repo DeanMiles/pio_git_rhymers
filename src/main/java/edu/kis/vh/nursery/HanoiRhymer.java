@@ -1,6 +1,6 @@
 package edu.kis.vh.nursery;
 //	Kombinacja klawiszy pozwala przesuwac sie po otworzonych plikach
-public class HanoiRhymer extends defaultCountingOutRhymer {
+public class HanoiRhymer extends DefaultCountingOutRhymer {
 
     int totalRejected = 0;
 
