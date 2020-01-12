@@ -2,12 +2,13 @@ package edu.kis.vh.nursery;
 //	Kombinacja klawiszy pozwala przesuwac sie po otworzonych plikach
 public class HanoiRhymer extends DefaultCountingOutRhymer {
 
-    int totalRejected = 0;
+    private int totalRejected = 0;
 
-    public int reportRejected() {
+    int reportRejected() {
         return totalRejected;
     }
 
+    @Override
     public void countIn(int in) {
         if (!callCheck() && in > peekaboo())
             totalRejected++;
