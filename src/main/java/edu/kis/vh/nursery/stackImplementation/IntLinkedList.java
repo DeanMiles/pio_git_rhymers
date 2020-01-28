@@ -1,6 +1,6 @@
-package edu.kis.vh.nursery.list;
+package edu.kis.vh.nursery.stackImplementation;
 
-public class IntLinkedList {
+public class IntLinkedList implements IntLinkedListInterface {
 
 
 	private final int POP_RETURN_VALUE_IF_LIST_IS_EMPTY = -1;
@@ -8,6 +8,7 @@ public class IntLinkedList {
 	private Node last;
 	int i;
 
+	@Override
 	public void push(int i) {
 		if (last == null)
 			last = new Node(i);
@@ -18,20 +19,24 @@ public class IntLinkedList {
 		}
 	}
 
+	@Override
 	public boolean isEmpty() {
 		return last == null;
 	}
 
+	@Override
 	public boolean isFull() {
 		return false;
 	}
 
+	@Override
 	public int top() {
 		if (isEmpty())
 			return TOP_RETURN_VALUE_IF_LIST_IS_EMPTY;
 		return last.VALUE;
 	}
 
+	@Override
 	public int pop() {
 		if (isEmpty())
 			return POP_RETURN_VALUE_IF_LIST_IS_EMPTY;

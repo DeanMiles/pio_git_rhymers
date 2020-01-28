@@ -2,6 +2,7 @@ package edu.kis.vh.nursery;
 
 import edu.kis.vh.nursery.factory.DefaultRhymersFactory;
 import edu.kis.vh.nursery.factory.Rhymersfactory;
+import edu.kis.vh.nursery.stackImplementation.IntArrayStack;
 
 class RhymersDemo {
 
@@ -23,7 +24,7 @@ class RhymersDemo {
             rhymers[3].countIn(rn.nextInt(20));
 
         for (int i = 0; i < rhymers.length; i++) {
-            while (!rhymers[i].callCheck())
+            while (!IntArrayStack.callCheck())
                 System.out.print(rhymers[i].countOut() + "  ");
             System.out.println();
         }
