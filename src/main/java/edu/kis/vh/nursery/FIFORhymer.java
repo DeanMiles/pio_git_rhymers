@@ -1,21 +1,30 @@
 package edu.kis.vh.nursery;
 
-public class FIFORhymer extends defaultCountingOutRhymer {
+/**
+ * Class FIFORhymer used in RhymersFactory
+ */
+public class FIFORhymer extends DefaultCountingOutRhymer {
 
-	public defaultCountingOutRhymer temp = new defaultCountingOutRhymer();
-	
-	@Override
-	public int countOut() {
-		while (!callCheck())
-			
-		temp.countIn(super.countOut());
-		
-		int ret = temp.countOut();
-		
-		while (!temp.callCheck())
-			
-		countIn(temp.countOut());
-		
-		return ret;
-	}
+    /**
+     *  instance created for operation and greater transparency
+     */
+    private final DefaultCountingOutRhymer TEMP = new DefaultCountingOutRhymer();
+
+    /**
+     * @return the number which is rejected
+     */
+    @Override
+    public int countOut() {
+        while (!callCheck())
+
+            TEMP.countIn(super.countOut());
+
+        int ret = TEMP.countOut();
+
+        while (!callCheck())
+
+            countIn(TEMP.countOut());
+
+        return ret;
+    }
 }
